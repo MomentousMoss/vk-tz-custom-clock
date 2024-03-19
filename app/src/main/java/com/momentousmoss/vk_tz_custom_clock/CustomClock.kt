@@ -48,6 +48,9 @@ class CustomClock @JvmOverloads constructor(
     var numberTextSizeCenterOffsetMultiplier : Float = DEFAULT_TEXT_SIZE_CENTER_OFFSET_MULTIPLIER
 
     var defaultHandPaint: Paint
+    var secondsHandDrawable: Drawable? = null
+    var minutesHandDrawable: Drawable? = null
+    var hoursHandDrawable: Drawable? = null
 
     var secondsHandLength: Int = DEFAULT_HAND_LENGTH
     var secondsHandWidth: Float = DEFAULT_HAND_WIDTH
@@ -65,7 +68,6 @@ class CustomClock @JvmOverloads constructor(
         context.obtainStyledAttributes(
             attrs, R.styleable.CustomClock, defStyle, 0
         ).apply {
-            clockFaceRadius = getDimension(R.styleable.CustomClock_clockFaceRadius, DEFAULT_FACE_RADIUS)
             clockFaceDrawable = getDrawable(R.styleable.CustomClock_clockFaceDrawable)
 
             numberTextDraw = getBoolean(R.styleable.CustomClock_numberTextDraw, DEFAULT_TEXT_DRAW)
@@ -79,14 +81,17 @@ class CustomClock @JvmOverloads constructor(
             secondsHandLength = getInteger(R.styleable.CustomClock_secondsHandLength, DEFAULT_HAND_LENGTH)
             secondsHandWidth = getDimension(R.styleable.CustomClock_secondsHandWidth, DEFAULT_HAND_WIDTH)
             secondsHandColor = getColor(R.styleable.CustomClock_secondsHandColor, DEFAULT_COLOR)
+            getDrawable(R.styleable.CustomClock_secondsHandDrawable)?.let { secondsHandDrawable = it }
 
             minutesHandLength = getInteger(R.styleable.CustomClock_minutesHandLength, DEFAULT_HAND_LENGTH)
             minutesHandWidth = getDimension(R.styleable.CustomClock_minutesHandWidth, DEFAULT_HAND_WIDTH)
             minutesHandColor = getColor(R.styleable.CustomClock_minutesHandColor, DEFAULT_COLOR)
+            getDrawable(R.styleable.CustomClock_minutesHandDrawable)?.let { minutesHandDrawable = it }
 
             hoursHandLength = getInteger(R.styleable.CustomClock_hoursHandLength, DEFAULT_HAND_LENGTH)
             hoursHandWidth = getDimension(R.styleable.CustomClock_hoursHandWidth, DEFAULT_HAND_WIDTH)
             hoursHandColor = getColor(R.styleable.CustomClock_hoursHandColor, DEFAULT_COLOR)
+            getDrawable(R.styleable.CustomClock_hoursHandDrawable)?.let { hoursHandDrawable = it }
 
             recycle()
         }

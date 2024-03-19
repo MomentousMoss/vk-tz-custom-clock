@@ -1,6 +1,5 @@
 <resources>
     <declare-styleable name="CustomClock">
-        <attr name="clockFaceRadius" format="dimension" />
         <attr name="clockFaceDrawable" format="color|reference" />
 
         <attr name="numberTextDraw" format="boolean" />
@@ -9,15 +8,18 @@
         <attr name="numberTextColor" format="color" />
 
         <attr name="secondsHandLength" format="integer" />
-        <attr name="secondsHandWidth" format="integer" />
+        <attr name="secondsHandWidth" format="dimension" />
         <attr name="secondsHandColor" format="color" />
+        <attr name="secondsHandDrawable" format="color|reference" />
 
         <attr name="minutesHandLength" format="integer" />
-        <attr name="minutesHandWidth" format="integer" />
+        <attr name="minutesHandWidth" format="dimension" />
         <attr name="minutesHandColor" format="color" />
+        <attr name="minutesHandDrawable" format="color|reference" />
 
         <attr name="hoursHandLength" format="integer" />
-        <attr name="hoursHandWidth" format="integer" />
+        <attr name="hoursHandWidth" format="dimension" />
         <attr name="hoursHandColor" format="color" />
+        <attr name="hoursHandDrawable" format="color|reference" />
     </declare-styleable>
 </resources>

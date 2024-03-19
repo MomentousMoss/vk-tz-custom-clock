@@ -1,19 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.momentousmoss.vk_tz_custom_clock.CustomClock
-        style="@style/Widget.Theme.Vk_Tz_custom_clock.CustomClock"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        app:numberTextDraw="true"
-        app:numberTextPadding="20dp"
-        app:numberTextSize="20dp"
-        />
-<!--        app:clockFaceDrawable="@drawable/clock_face_2"/>-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fadeScrollbars="false"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <com.momentousmoss.vk_tz_custom_clock.CustomClock
+                style="@style/Widget.Theme.Vk_Tz_custom_clock.CustomClock"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:contentDescription="Дефолтные часы без параметров" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Дефолтные часы без параметров"
+                android:layout_marginBottom="32dp"/>
+
+            <com.momentousmoss.vk_tz_custom_clock.CustomClock
+                style="@style/Widget.Theme.Vk_Tz_custom_clock.CustomClock"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                app:numberTextDraw="true"
+                app:numberTextPadding="20dp"
+                app:numberTextSize="20dp"
+                android:contentDescription="Дефолтные часы с циферблатом" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Дефолтные часы с циферблатом"
+                android:layout_marginBottom="32dp"/>
+
+            <com.momentousmoss.vk_tz_custom_clock.CustomClock
+                style="@style/Widget.Theme.Vk_Tz_custom_clock.CustomClock"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:numberTextDraw="true"
+                app:numberTextPadding="20dp"
+                app:numberTextSize="10dp"
+                app:numberTextColor="@color/black"
+                app:clockFaceDrawable="@color/design_default_color_primary_variant"
+                android:contentDescription="Дефолтные часы с цветным бэкграундом, заменой цвета циферблата, уменьшенными размерами"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Дефолтные часы с цветным бэкграундом, заменой цвета циферблата, уменьшенными размерами"
+                android:layout_marginBottom="32dp"/>
+
+            <com.momentousmoss.vk_tz_custom_clock.CustomClock
+                style="@style/Widget.Theme.Vk_Tz_custom_clock.CustomClock"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                app:numberTextPadding="20dp"
+                app:numberTextSize="20dp"
+                app:numberTextColor="@color/black"
+                app:clockFaceDrawable="@drawable/clock_face_2"
+                android:contentDescription="Часы с дроуейблом на бэкграунде и выключенными цифрами. Параметры для цифр добавлены для проверки ошибок"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Часы с дроуейблом на бэкграунде и выключенными цифрами. Параметры для цифр добавлены для проверки ошибок"
+                android:layout_marginBottom="32dp"/>
+
+            <com.momentousmoss.vk_tz_custom_clock.CustomClock
+                style="@style/Widget.Theme.Vk_Tz_custom_clock.CustomClock"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                app:hoursHandColor="@color/black"
+                app:minutesHandColor="@color/black"
+                app:secondsHandColor="@color/purple_700"
+                app:clockFaceDrawable="@drawable/clock_face_3"
+                android:contentDescription="Часы с дроуейблом на бэкграунде и заменёнными цветами стрелок"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Часы с дроуейблом на бэкграунде и заменёнными цветами стрелок"
+                android:layout_marginBottom="32dp"/>
+
+            <com.momentousmoss.vk_tz_custom_clock.CustomClock
+                style="@style/Widget.Theme.Vk_Tz_custom_clock.CustomClock"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                app:hoursHandColor="@color/white"
+                app:minutesHandColor="@color/light_blue_600"
+                app:secondsHandColor="@color/red"
+                app:hoursHandWidth="20dp"
+                app:minutesHandWidth="15dp"
+                app:secondsHandWidth="10dp"
+                app:hoursHandLength="100"
+                app:minutesHandLength="50"
+                app:secondsHandLength="30"
+                app:numberTextPadding="20dp"
+                app:numberTextSize="20dp"
+                app:clockFaceDrawable="@drawable/clock_face_1"
+                app:numberTextDraw="true"
+                android:contentDescription="Часы с дроуейблом на бэкграунде и добавленными цифрами поверх. С заменённой длиной, шириной и цветами стрелок."/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Часы с дроуейблом на бэкграунде и добавленными цифрами поверх. С заменённой длиной, шириной и цветами стрелок."
+                android:layout_marginBottom="32dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
