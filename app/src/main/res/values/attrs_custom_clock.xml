@@ -1,8 +1,38 @@
 <resources>
     <declare-styleable name="CustomClock">
-        <attr name="exampleString" format="string" />
-        <attr name="exampleDimension" format="dimension" />
-        <attr name="exampleColor" format="color" />
-        <attr name="exampleDrawable" format="color|reference" />
+        <attr name="clockFaceRadius" format="dimension" />
+        <attr name="clockFaceDrawable" format="color|reference" />
+
+        <attr name="numberTextDraw" format="boolean" />
+        <attr name="numberTextPadding" format="dimension" />
+        <attr name="numberTextSize" format="dimension" />
+        <attr name="numberTextColor" format="color" />
+
+        <attr name="secondsHandLength" format="dimension" >
+            <enum name="match_parent" value="-1" />
+            <enum name="wrap_content" value="-2" />
+        </attr>
+        <attr name="secondsHandWidth" format="dimension" >
+            <enum name="match_parent" value="-1" />
+            <enum name="wrap_content" value="-2" />
+        </attr>
+
+        <attr name="minutesHandLength" format="dimension" >
+            <enum name="match_parent" value="-1" />
+            <enum name="wrap_content" value="-2" />
+        </attr>
+        <attr name="minutesHandWidth" format="dimension" >
+            <enum name="match_parent" value="-1" />
+            <enum name="wrap_content" value="-2" />
+        </attr>
+
+        <attr name="hoursHandLength" format="dimension" >
+            <enum name="match_parent" value="-1" />
+            <enum name="wrap_content" value="-2" />
+        </attr>
+        <attr name="hoursHandWidth" format="dimension" >
+            <enum name="match_parent" value="-1" />
+            <enum name="wrap_content" value="-2" />
+        </attr>
     </declare-styleable>
 </resources>

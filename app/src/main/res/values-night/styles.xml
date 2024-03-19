@@ -1,7 +1,6 @@
 <resources>
-
     <style name="Widget.Theme.Vk_Tz_custom_clock.CustomClock" parent="">
-        <item name="android:background">@color/gray_600</item>
-        <item name="exampleColor">@color/light_blue_600</item>
+        <item name="numberTextColor">@color/light_blue_400</item>
+        <item name="numberTextSize">15sp</item>
     </style>
 </resources>
