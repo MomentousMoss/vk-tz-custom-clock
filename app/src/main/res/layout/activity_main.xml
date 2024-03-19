@@ -102,19 +102,25 @@
                 style="@style/Widget.Theme.Vk_Tz_custom_clock.CustomClock"
                 android:layout_width="300dp"
                 android:layout_height="300dp"
+
+                app:clockFaceDrawable="@drawable/clock_face_1"
+
+                app:numberTextDraw="true"
+                app:numberTextPadding="20dp"
+                app:numberTextSize="20dp"
+
                 app:hoursHandColor="@color/white"
                 app:minutesHandColor="@color/light_blue_600"
                 app:secondsHandColor="@color/red"
+
                 app:hoursHandWidth="20dp"
                 app:minutesHandWidth="15dp"
                 app:secondsHandWidth="10dp"
-                app:hoursHandLength="100"
-                app:minutesHandLength="50"
-                app:secondsHandLength="30"
-                app:numberTextPadding="20dp"
-                app:numberTextSize="20dp"
-                app:clockFaceDrawable="@drawable/clock_face_1"
-                app:numberTextDraw="true"
+
+                app:hoursHandLength="20dp"
+                app:minutesHandLength="15dp"
+                app:secondsHandLength="10dp"
+
                 android:contentDescription="Часы с дроуейблом на бэкграунде и добавленными цифрами поверх. С заменённой длиной, шириной и цветами стрелок."/>
 
             <TextView

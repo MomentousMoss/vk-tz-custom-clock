@@ -7,17 +7,17 @@
         <attr name="numberTextSize" format="dimension" />
         <attr name="numberTextColor" format="color" />
 
-        <attr name="secondsHandLength" format="integer" />
+        <attr name="secondsHandLength" format="dimension" />
         <attr name="secondsHandWidth" format="dimension" />
         <attr name="secondsHandColor" format="color" />
         <attr name="secondsHandDrawable" format="color|reference" />
 
-        <attr name="minutesHandLength" format="integer" />
+        <attr name="minutesHandLength" format="dimension" />
         <attr name="minutesHandWidth" format="dimension" />
         <attr name="minutesHandColor" format="color" />
         <attr name="minutesHandDrawable" format="color|reference" />
 
-        <attr name="hoursHandLength" format="integer" />
+        <attr name="hoursHandLength" format="dimension" />
         <attr name="hoursHandWidth" format="dimension" />
         <attr name="hoursHandColor" format="color" />
         <attr name="hoursHandDrawable" format="color|reference" />

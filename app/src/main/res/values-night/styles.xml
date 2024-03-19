@@ -3,9 +3,9 @@
         <item name="numberTextColor">@color/light_blue_600</item>
         <item name="numberTextSize">15sp</item>
 
-        <item name="hoursHandLength">60</item>
-        <item name="minutesHandLength">75</item>
-        <item name="secondsHandLength">90</item>
+        <item name="hoursHandLength">20dp</item>
+        <item name="minutesHandLength">25dp</item>
+        <item name="secondsHandLength">30dp</item>
 
         <item name="secondsHandColor">@color/red</item>
         <item name="minutesHandColor">@color/white</item>

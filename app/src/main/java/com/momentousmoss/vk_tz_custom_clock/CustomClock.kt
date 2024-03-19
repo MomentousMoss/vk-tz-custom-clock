@@ -20,7 +20,7 @@ const val DEFAULT_TEXT_DRAW = false
 const val DEFAULT_TEXT_PADDING = 0f
 const val DEFAULT_TEXT_SIZE = 12f
 const val DEFAULT_TEXT_SIZE_CENTER_OFFSET_MULTIPLIER = 0f
-const val DEFAULT_HAND_LENGTH = 80
+const val DEFAULT_HAND_LENGTH = 30f
 const val DEFAULT_HAND_WIDTH = 10f
 const val DEFAULT_COLOR = Color.BLACK
 
@@ -52,15 +52,15 @@ class CustomClock @JvmOverloads constructor(
     var minutesHandDrawable: Drawable? = null
     var hoursHandDrawable: Drawable? = null
 
-    var secondsHandLength: Int = DEFAULT_HAND_LENGTH
+    var secondsHandLength: Float = DEFAULT_HAND_LENGTH
     var secondsHandWidth: Float = DEFAULT_HAND_WIDTH
     var secondsHandColor: Int = DEFAULT_COLOR
 
-    var minutesHandLength: Int = DEFAULT_HAND_LENGTH
+    var minutesHandLength: Float = DEFAULT_HAND_LENGTH
     var minutesHandWidth: Float = DEFAULT_HAND_WIDTH
     var minutesHandColor: Int = DEFAULT_COLOR
 
-    var hoursHandLength: Int = DEFAULT_HAND_LENGTH
+    var hoursHandLength: Float = DEFAULT_HAND_LENGTH
     var hoursHandWidth: Float = DEFAULT_HAND_WIDTH
     var hoursHandColor: Int = DEFAULT_COLOR
 
@@ -78,17 +78,17 @@ class CustomClock @JvmOverloads constructor(
                 TypedValue.COMPLEX_UNIT_SP, numberTextSize, context.resources.displayMetrics
             ) / TEXT_CENTER_OFFSET_MULTIPLIER
 
-            secondsHandLength = getInteger(R.styleable.CustomClock_secondsHandLength, DEFAULT_HAND_LENGTH)
+            secondsHandLength = getDimension(R.styleable.CustomClock_secondsHandLength, DEFAULT_HAND_LENGTH)
             secondsHandWidth = getDimension(R.styleable.CustomClock_secondsHandWidth, DEFAULT_HAND_WIDTH)
             secondsHandColor = getColor(R.styleable.CustomClock_secondsHandColor, DEFAULT_COLOR)
             getDrawable(R.styleable.CustomClock_secondsHandDrawable)?.let { secondsHandDrawable = it }
 
-            minutesHandLength = getInteger(R.styleable.CustomClock_minutesHandLength, DEFAULT_HAND_LENGTH)
+            minutesHandLength = getDimension(R.styleable.CustomClock_minutesHandLength, DEFAULT_HAND_LENGTH)
             minutesHandWidth = getDimension(R.styleable.CustomClock_minutesHandWidth, DEFAULT_HAND_WIDTH)
             minutesHandColor = getColor(R.styleable.CustomClock_minutesHandColor, DEFAULT_COLOR)
             getDrawable(R.styleable.CustomClock_minutesHandDrawable)?.let { minutesHandDrawable = it }
 
-            hoursHandLength = getInteger(R.styleable.CustomClock_hoursHandLength, DEFAULT_HAND_LENGTH)
+            hoursHandLength = getDimension(R.styleable.CustomClock_hoursHandLength, DEFAULT_HAND_LENGTH)
             hoursHandWidth = getDimension(R.styleable.CustomClock_hoursHandWidth, DEFAULT_HAND_WIDTH)
             hoursHandColor = getColor(R.styleable.CustomClock_hoursHandColor, DEFAULT_COLOR)
             getDrawable(R.styleable.CustomClock_hoursHandDrawable)?.let { hoursHandDrawable = it }
@@ -149,17 +149,17 @@ class CustomClock @JvmOverloads constructor(
     }
 
     private fun drawHoursHand(canvas: Canvas, calendar: Calendar) {
-        val handCoordinates = getCoordinatesFromDegree(getHandDegree(calendar, Calendar.HOUR), hoursHandLength)
+        val handCoordinates = getHandCoordinates(getHandDegree(calendar, Calendar.HOUR), hoursHandLength)
         drawHand(canvas, handCoordinates, hoursHandWidth, hoursHandColor)
     }
 
     private fun drawMinutesHand(canvas: Canvas, calendar: Calendar) {
-        val handCoordinates = getCoordinatesFromDegree(getHandDegree(calendar, Calendar.MINUTE), minutesHandLength)
+        val handCoordinates = getHandCoordinates(getHandDegree(calendar, Calendar.MINUTE), minutesHandLength)
         drawHand(canvas, handCoordinates, minutesHandWidth, minutesHandColor)
     }
 
     private fun drawSecondsHand(canvas: Canvas, calendar: Calendar) {
-        val handCoordinates = getCoordinatesFromDegree(getHandDegree(calendar, Calendar.SECOND), secondsHandLength)
+        val handCoordinates = getHandCoordinates(getHandDegree(calendar, Calendar.SECOND), secondsHandLength)
         drawHand(canvas, handCoordinates, secondsHandWidth, secondsHandColor)
     }
 
@@ -186,8 +186,8 @@ class CustomClock @JvmOverloads constructor(
         return (onePercent * calendar.get(timeType)).roundToInt()
     }
 
-    private fun getCoordinatesFromDegree(degree: Int, handLength: Int): Pair<Float, Float> {
-        val angle = Math.toRadians((degree - 90).toDouble())
+    private fun getHandCoordinates(handDegree: Int, handLength: Float): Pair<Float, Float> {
+        val angle = Math.toRadians((handDegree - 90).toDouble())
         val radiusToHandle = (clockFaceRadius - numberTextPadding) / 100 * handLength
         val x = (viewWidth / 2 + cos(angle) * radiusToHandle).toFloat()
         val y = (viewHeight / 2 + sin(angle) * radiusToHandle).toFloat()
