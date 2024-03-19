@@ -15,4 +15,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/sample_custom_clock"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
