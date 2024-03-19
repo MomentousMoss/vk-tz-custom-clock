@@ -8,31 +8,16 @@
         <attr name="numberTextSize" format="dimension" />
         <attr name="numberTextColor" format="color" />
 
-        <attr name="secondsHandLength" format="dimension" >
-            <enum name="match_parent" value="-1" />
-            <enum name="wrap_content" value="-2" />
-        </attr>
-        <attr name="secondsHandWidth" format="dimension" >
-            <enum name="match_parent" value="-1" />
-            <enum name="wrap_content" value="-2" />
-        </attr>
+        <attr name="secondsHandLength" format="integer" />
+        <attr name="secondsHandWidth" format="integer" />
+        <attr name="secondsHandColor" format="color" />
 
-        <attr name="minutesHandLength" format="dimension" >
-            <enum name="match_parent" value="-1" />
-            <enum name="wrap_content" value="-2" />
-        </attr>
-        <attr name="minutesHandWidth" format="dimension" >
-            <enum name="match_parent" value="-1" />
-            <enum name="wrap_content" value="-2" />
-        </attr>
+        <attr name="minutesHandLength" format="integer" />
+        <attr name="minutesHandWidth" format="integer" />
+        <attr name="minutesHandColor" format="color" />
 
-        <attr name="hoursHandLength" format="dimension" >
-            <enum name="match_parent" value="-1" />
-            <enum name="wrap_content" value="-2" />
-        </attr>
-        <attr name="hoursHandWidth" format="dimension" >
-            <enum name="match_parent" value="-1" />
-            <enum name="wrap_content" value="-2" />
-        </attr>
+        <attr name="hoursHandLength" format="integer" />
+        <attr name="hoursHandWidth" format="integer" />
+        <attr name="hoursHandColor" format="color" />
     </declare-styleable>
 </resources>

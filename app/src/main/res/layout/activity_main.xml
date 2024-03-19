@@ -13,6 +13,7 @@
         app:numberTextDraw="true"
         app:numberTextPadding="20dp"
         app:numberTextSize="20dp"
-        app:clockFaceDrawable="@drawable/clock_face_2"/>
+        />
+<!--        app:clockFaceDrawable="@drawable/clock_face_2"/>-->
 
 </RelativeLayout>

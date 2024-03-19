@@ -2,5 +2,13 @@
     <style name="Widget.Theme.Vk_Tz_custom_clock.CustomClock" parent="">
         <item name="numberTextColor">@color/light_blue_400</item>
         <item name="numberTextSize">15sp</item>
+
+        <item name="hoursHandLength">60</item>
+        <item name="minutesHandLength">75</item>
+        <item name="secondsHandLength">90</item>
+
+        <item name="secondsHandColor">@color/red</item>
+        <item name="minutesHandColor">@color/black</item>
+        <item name="hoursHandColor">@color/black</item>
     </style>
 </resources>
